@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block class %}
+class="sub_page"
+{% endblock class %}
+
+{% block book %}
+<!-- book section -->
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Order Details
+        </h2>
+        <p>Order ID: {{order.id}}</p>
+        <p>Date: {{order.created_at}}</p>
+        <p><b>Total: {{order.total_price}}</b></p>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-md-6">
+          <table class="table  table-bordered">
+            <thead>
+              <tr>
+                  <th>Item</th>
+                  <th>Qty</th>
+                  <th>Price</th>
+                  <th>Total</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+
+              {% for item in order.items.all %}
+              <tr>
+                  <td>{{item.dish.name}}</td>
+                  <td>{{item.quantity}}</td>
+                  <td>${{item.price}}</td>
+                  <td>${{item.total_price}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end book section -->
+{% endblock book %}

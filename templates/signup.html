@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block class %}
+class="sub_page"
+{% endblock class %}
+
+{% block book %}
+<!-- signup section -->
+  <section class="book_section layout_padding ">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Signup
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form action="" method="post">
+                {% csrf_token %}
+              <div>
+                <input name="username" required type="text" class="form-control" placeholder="Username" />
+              </div>
+              <div>
+                <input name="email" required type="email" class="form-control" placeholder="Email" />
+              </div>
+              <div>
+                <input name="password" required type="password" class="form-control" placeholder="Password" />
+              </div>
+              <div>
+                <input name="confirm_password" required type="password" class="form-control" placeholder="Confirm Password" />
+              </div>
+              <div class="btn_box">
+                <button type="submit">
+                  Signup
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end signup section -->
+{% endblock book %}

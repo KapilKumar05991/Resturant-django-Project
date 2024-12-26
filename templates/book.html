@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block class %}
+class="sub_page"
+{% endblock class %}
+
+{% block book_active %}
+active
+{% endblock %}
+
+{% block book %}
+<!-- book section -->
+  <section class="book_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Book A Table
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <form action="" method="post">
+              {% csrf_token%}
+              <div>
+                <input name="name" required  type="text" class="form-control" placeholder="Your Name" />
+              </div>
+              <div>
+                <input name="phone" required  type="text" class="form-control" placeholder="Phone Number" />
+              </div>
+              <div>
+                <select name="guests" required class="form-control nice-select wide">
+                  <option value="" disabled selected>
+                    How many persons?
+                  </option>
+                  <option value="1">
+                    1
+                  </option>
+                  <option value="2">
+                    2
+                  </option>
+                  <option value="3">
+                    3
+                  </option>
+                  <option value="4">
+                    4
+                  </option>
+                  <option value="5">
+                    5
+                  </option>
+                  <option value="6">
+                    6
+                  </option>
+                  <option value="7">
+                    7
+                  </option>
+                  <option value="8">
+                    8
+                  </option>
+                </select>
+              </div>
+              <div>
+                <input name="date" required type="date" class="form-control">
+              </div>
+              <div>
+                <input name="time" required type="time" class="form-control">
+              </div>
+              <div class="btn_box">
+                <button>
+                  Book Now
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end book section -->
+{% endblock book %}
